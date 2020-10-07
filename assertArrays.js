@@ -1,3 +1,5 @@
+const isEqual = require('lodash.isequal');
+
 const doesContain = function(array, element) {
   return array.indexOf(element) !== -1;
 };
@@ -14,8 +16,16 @@ const compare = function(actual, expected) {
   return actual.length === expected.length && actual.every((value, index) => value === expected[index]);
 };
 
+const deepCompare = function(actual, expected) {
+  return actual.length === expected.length && actual.every((value, index) => isEqual(value, expected[index]));
+};
+
 const isSorted = function(array, fn) {
   return compare(array, array.slice().sort(fn));
+};
+
+const isDeeplySorted = function(array, fn) {
+  return deepCompare(array, array.slice().sort(fn));
 };
 
 module.exports = (chai) => {
@@ -107,5 +117,13 @@ module.exports = (chai) => {
       'expected #{this} not to be sorted'
     );
   });
+
+  chai.Assertion.addMethod('deeplySorted', function(sortfn) {
+    this.assert(
+      isDeeplySorted(this._obj, sortfn),
+      'expected #{this} to be sorted',
+      'expected #{this} not to be sorted'
+    )
+  })
 
 };

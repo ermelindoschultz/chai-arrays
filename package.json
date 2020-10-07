@@ -1,6 +1,6 @@
 {
-  "name": "chai-arrays",
-  "version": "2.2.0",
+  "name": "@erme-schultz/chai-arrays",
+  "version": "2.3.0",
   "description": "a simple chai plugin for better array assertions",
   "main": "assertArrays.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GaneshSPatil/chai-arrays.git"
+    "url": "git+https://github.com/ermelindoschultz/chai-arrays.git"
   },
   "keywords": [
     "chai",
@@ -19,11 +19,14 @@
     "Array"
   ],
   "author": "Ganesh Patil",
+  "contributors": [
+    "Erme Schultz"
+  ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GaneshSPatil/chai-arrays/issues"
+    "url": "https://github.com/ermelindoschultz/chai-arrays/issues"
   },
-  "homepage": "https://github.com/GaneshSPatil/chai-arrays#readme",
+  "homepage": "https://github.com/ermelindoschultz/chai-arrays",
   "engines": {
     "node": ">=0.10"
   },
@@ -31,6 +34,9 @@
     "chai": "^4.2.0",
     "eslint": "^7.2.0",
     "istanbul": "^0.4.5",
-    "mocha": "^8.0.1"
+    "mocha": "^8.1.3"
+  },
+  "dependencies": {
+    "lodash.isequal": "^4.5.0"
   }
 }
