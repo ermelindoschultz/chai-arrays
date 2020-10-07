@@ -17,7 +17,7 @@ const compare = function(actual, expected) {
 };
 
 const deepCompare = function(actual, expected) {
-  return isEqual(actual, expected);
+  return actual.length === expected.length && actual.every((value, index) => isEqual(value, expected[index]));
 };
 
 const isSorted = function(array, fn) {
